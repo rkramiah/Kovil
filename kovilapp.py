@@ -5,7 +5,7 @@ import openpyxl as xl
 import streamlit as st
 from PIL import Image
 
-
+st.sidebar.title("Side Bar")
 
 col7,col8 = st.columns(2)
 
@@ -23,13 +23,14 @@ with col8:
 
 
 df_as = pd.read_excel("appetizer.xlsx")
-df_as.set_index('appetizers_snacks')
+#df_as.set_index('appetizers_snacks')
 
 df_md = pd.read_excel("main.xlsx")
-#df_md.set_index('main_dishes')
+#df_md = df_md.rename(columns={'main_dishes' : "Main Dish"})
+df_md=df_md[:].round()
 
 df_rd = pd.read_excel("rice.xlsx")
-df_rd.set_index('rice_dishes')
+#df_rd.set_index('rice_dishes')
 
 
 
@@ -51,7 +52,7 @@ with col2:
 with col3:
     rd_ = st.multiselect(label="Rice Dishes",
                   options = df_rd.rice_dishes.unique())
-    checkbox_rd =st.checkbox("Check box Riceh")    
+    checkbox_rd =st.checkbox("Check box Rice")    
     
     
     
