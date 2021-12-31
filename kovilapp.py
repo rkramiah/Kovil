@@ -5,7 +5,7 @@ import openpyxl as xl
 import streamlit as st
 from PIL import Image
 
-st.sidebar.title("Side Bar")
+#st.sidebar.title("Side Bar")
 
 col7,col8 = st.columns(2)
 
